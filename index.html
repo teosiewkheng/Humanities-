@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sec 3 G3 Geography: Volcano Structure & Formation VR</title>
+    <meta name="description" content="MOE 2279 Geography Cluster 4: Tectonics VR Simulation">
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <audio id="rumble" src="https://actions.google.com/sounds/v1/science_fiction/alien_hum.ogg" preload="auto"></audio>
+      </a-assets>
+
+      <a-entity id="rig" position="0 1.6 5">
+        <a-camera look-controls wasd-controls>
+          <a-cursor color="#FFF" center-ripple="true"></a-cursor>
+        </a-camera>
+      </a-entity>
+
+      <a-entity sound="src: #rumble; loop: true; autoplay: true; volume: 0.4"></a-entity>
+      <a-entity environment="preset: volcano; lighting: distant; playArea: 1"></a-entity>
+
+      <a-sphere position="0 -2 -3" radius="1.5" color="#FF3300" material="emissive: #FF3300; emissiveIntensity: 0.5">
+        <a-text value="1. MAGMA CHAMBER\nReservoir of molten rock" position="0 0 1.6" scale="0.8 0.8 0.8" align="center" color="#FFFFFF"></a-text>
+      </a-sphere>
+
+      <a-cylinder position="0 1 -3" radius="0.25" height="4" color="#FF6600" material="emissive: #FF5500">
+        <a-text value="2. CONDUIT\nPipe where magma travels up" position="0.6 0 0" scale="0.6 0.6 0.6" align="left" color="#FFFFFF"></a-text>
+      </a-cylinder>
+
+      <a-cone position="0 2 -3" radius-bottom="4" radius-top="0.4" height="2.5" color="#554433" opacity="0.85" open-ended="false">
+        <a-cone position="0 1.26 0" radius-bottom="0.4" radius-top="0.8" height="0.2" color="#222"></a-cone>
+      </a-cone>
+
+      <a-text value="3. CRATER\nBowl-shaped opening" position="0 3.6 -3" scale="0.7 0.7 0.7" align="center" color="#FFFF00"></a-text>
+
+      <a-box position="1 2.2 -2.5" rotation="20 0 45" width="2" height="0.1" depth="0.5" color="#FF3300"></a-box>
+      <a-text value="4. LAVA FLOW\nMagma that reaches surface" position="2.2 2.5 -2.5" scale="0.6 0.6 0.6" align="left" color="#FFFFFF"></a-text>
+
+      <a-entity position="-4 1.8 -2" rotation="0 45 0">
+        <a-plane width="3" height="2" color="#222222" opacity="0.9"></a-plane>
+        <a-text value="HOW VOLCANOES FORM\n\n1. Plates Move Together\nOceanic plate sinks under\ncontinental plate (Subduction).\n\n2. Melting\nHigh heat melts rock into magma.\n\n3. Magma Rises\nMagma is less dense than\nsurrounding rocks, so it forces\nits way upward." 
+                position="-1.3 0.8 0.05" width="2.8" color="#FFF" wrap-count="30"></a-text>
+      </a-entity>
+
+      <a-entity light="type: ambient; intensity: 0.6"></a-entity>
+      <a-entity light="type: directional; intensity: 0.8" position="1 4 3"></a-entity>
+    </a-scene>
+  </body>
+</html>
